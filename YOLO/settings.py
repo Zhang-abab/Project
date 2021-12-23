@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-l!^+c*zulz4jsha#!_i2g+(%$o+^_7@eif$w6gfvauop2hhrwm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,10 +75,19 @@ WSGI_APPLICATION = 'YOLO.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # python自带的一个数据库，基本不会被使用
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 注册我们自己使用的数据库连接
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'YOLO', #数据库名称
+        'USER':'Yolo', # 连接数据库的用户名称
+        'PASSWORD':'Zhang.123',  # 用户密码
+        'HOST':'127.0.0.1', # 访问的数据库的主机的ip地址
+        'PORT':'3306', # 默认mysql访问端口
     }
 }
+
 
 
 # Password validation
