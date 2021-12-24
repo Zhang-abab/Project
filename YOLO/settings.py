@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #新增应用
     'learning_logs',
+    'users',
 ]
 
 MIDDLEWARE = [
