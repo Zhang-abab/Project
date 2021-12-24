@@ -15,4 +15,6 @@ urlpatterns = [
     path('topics/<int:topic_id>/',views.topic, name='topic'),
     #用于添加新用户的页面
     path('new_topic/',views.new_topic, name='new_topic'),
+    #用于添加新的条目页面
+    path('new_entry/<int:topic_id>',views.new_entry,name='new_entry'),
 ]
