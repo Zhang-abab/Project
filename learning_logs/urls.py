@@ -12,5 +12,7 @@ urlpatterns = [
     #显示所有主题
     path('topics/',views.topics, name='topics'),
     #特定主题的详细页面
-    path('topics/<int:topic_id>/',views.topic, name='topic')
+    path('topics/<int:topic_id>/',views.topic, name='topic'),
+    #用于添加新用户的页面
+    path('new_topic/',views.new_topic, name='new_topic'),
 ]
