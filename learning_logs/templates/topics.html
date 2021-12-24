@@ -5,7 +5,7 @@
 <p>Topics</p>
 <ul>
     {% for topic in topics %}
-    <Li>{{ topic }}</Li>
+    <Li><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></Li>
     {% empty %}
     <li>NO topics have been added yet.</li>
     {% endfor %}

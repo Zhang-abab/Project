@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p> Topics:{{ topic }}</p>
+
+<P>Entries:</P>
+
+<ul>
+    {% for entry in entries %}
+        <li>
+            <P>{{ entry.date_added|date:'M d, Y H:i' }}</P>
+            <P>{{ entry.text|linebreaks }}</P>
+        </li>
+    {% empty %}
+        <li>There are on entries for this topic yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
