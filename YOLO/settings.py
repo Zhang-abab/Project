@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     #新增应用
     'learning_logs',
     'users',
+    #第三方应用
+    'bootstrap4',
 
     'django.contrib.admin',
     'django.contrib.auth',
