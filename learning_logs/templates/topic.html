@@ -13,6 +13,9 @@
         <li>
             <P>{{ entry.date_added|date:'M d, Y H:i' }}</P>
             <P>{{ entry.text|linebreaks }}</P>
+            <P>
+            <a href="{% url 'learning_logs:edit_entry' entry.id %}">Edit entry</a>
+            </P>
         </li>
     {% empty %}
         <li>There are on entries for this topic yet.</li>
