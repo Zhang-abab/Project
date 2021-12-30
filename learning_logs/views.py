@@ -22,7 +22,7 @@ def topic(request, topic_id):
     """显示单个主题及其条目"""
     topic = Topic.objects.get(id = topic_id)
     #确认用户
-    if topic.ownner != request.user:
+    if topic.owner != request.user:
         raise Http404
 
     entries = topic.entry_set.order_by('-date_added')

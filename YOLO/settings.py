@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l!^+c*zulz4jsha#!_i2g+(%$o+^_7@eif$w6gfvauop2hhrwm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'YOLO.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,10 +91,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
         'NAME': 'YOLO', #数据库名称
         'USER':'Yolo', # 连接数据库的用户名称
-        'PASSWORD':'Zhang.123',  # 用户密码
+        'PASSWORD':'000119',  # 用户密码
         'HOST':'127.0.0.1', # 访问的数据库的主机的ip地址
         'PORT':'3306', # 默认mysql访问端口
     }
+    
 }
 
 
