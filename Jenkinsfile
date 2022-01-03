@@ -7,7 +7,12 @@ node{
             [$class: 'GitSCM', 
             branches: [[name: '*/${branch}']], 
             userRemoteConfigs: [[credentialsId: "${git_auth}", 
-            url: "${git_address}"]]]
-            ) }
+            url: "${git_address}"]]])
+    }
+    stage('切换目录'){ 
+        sh "cd /home/Project"
+        sh "docker-compose stop"
+    }
+    echo '项目已停止'
 }
 
