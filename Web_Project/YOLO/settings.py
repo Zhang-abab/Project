@@ -89,10 +89,11 @@ DATABASES = {
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 注册我们自己使用的数据库连接
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
-        'NAME': 'YOLO', #数据库名称
-        'USER':'Yolo', # 连接数据库的用户名称
-        'PASSWORD':'000119',  # 用户密码
-        'HOST':'127.0.0.1', # 访问的数据库的主机的ip地址
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': os.environ.get('POSTGRES_NAME'), #数据库名称
+        'USER':os.environ.get('POSTGRES_USER'), # 连接数据库的用户名称
+        'PASSWORD':os.environ.get('POSTGRES_PASSWORD'),  # 用户密码
+        'HOST':'mysql', # 访问的数据库的主机的ip地址
         'PORT':'3306', # 默认mysql访问端口
     }
     

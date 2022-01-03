@@ -21,18 +21,18 @@ services:
       - MYSQL_USER=zhang
       - MYSQL_PASSWORD=zhang
    volumes:
-      - /home/data/mysql/data:/var/lib/mysql       #将容器中运行的mysql数据保存到宿主机，防止容器删除后数据丢失
-      - /home/data/conf:/etc/my.conf.d 
+      - ./Mysql_Data/mysql/data:/var/lib/mysql       #将容器中运行的mysql数据保存到宿主机，防止容器删除后数据丢失
+      - ./Mysql_Data/conf:/etc/my.conf.d 
    networks:
        - Django
-   container_name: mysql
+   container_name: Web_Mysql
 
   web:
-    container_name: Yolo_web
+    container_name: Web_Yolo
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./Web_Project:/code
     environment:
       - POSTGRES_NAME=YOLO
       - POSTGRES_USER=zhang
