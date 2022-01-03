@@ -1,6 +1,6 @@
 def branch = "main"
 def git_auth = "Zhang-abab_SHH"
-def git_address = "git@github.com:Zhang-abab/Project.git"
+def git_address = "git@github.com:Zhang-abab/Project"
 node{
     stage('拉取代码'){ 
         checkout(
