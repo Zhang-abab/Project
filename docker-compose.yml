@@ -44,7 +44,7 @@ services:
     depends_on:
        - mysql
     #ontainer_name: Yolo_web
-
+    #12344
 networks:
   Django:
    external: true
