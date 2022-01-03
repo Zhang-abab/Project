@@ -6,7 +6,7 @@ node{
        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Zhang-abab_SHH', url: 'git@github.com:Zhang-abab/Project.git']]])
     }
     stage('切换目录'){ 
-        sh"cd /home/Project"
+        sh"exit"
         sh"docker-compose stop"
     }
     echo '项目已停止'
