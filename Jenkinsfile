@@ -1,7 +1,7 @@
 def branch = "main"
 def git_auth = "Zhang-abab_SHH"
 def git_address = "git@github.com:Zhang-abab/Project.git"
-node("jenkins-slave"){
+node{
     stage('拉取代码'){ 
         checkout(
             [$class: 'GitSCM', 
