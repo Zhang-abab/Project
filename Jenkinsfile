@@ -3,12 +3,17 @@
 // def git_address = "git@github.com:Zhang-abab/Project.git"
 node{
     stage('拉取代码'){ 
-       checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Zhang-abab_SHH', url: 'git@github.com:Zhang-abab/Project.git']]])
+       checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Zhang-abab-SSH', url: 'git@github.com:Zhang-abab/Project.git']]])
     }
     stage('切换目录'){ 
-        sh"exit"
+        sh"cd /home/Project"
         sh"docker-compose stop"
     }
-    echo '项目已停止'
+    stage('替换项目并运行'){ 
+        sh"rm -rf ./*"
+        sh"cp /var/lib/jenkins/workspace/Django_Yolo/* ./"
+        sh"docker-compose up"
+    }
+    echo '构建完成'
 }
 
