@@ -8,6 +8,7 @@ node{
     stage('切换目录'){ 
         sh"cd /home/Project"
         //sh"docker-compose stop"
+        sh"pwd"
     }
     stage('替换项目并运行'){ 
         sh"rm -rf ./*"
