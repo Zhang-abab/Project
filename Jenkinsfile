@@ -6,15 +6,16 @@ node{
        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Zhang-abab-SSH', url: 'git@github.com:Zhang-abab/Project.git']]])
     }
     stage('切换目录'){ 
-        sh"su root"
-        sh"cd /home/Project"
+        //sh"su root"
+        //sh"cd /home/Project"
         //sh"docker-compose stop"
-        sh"pwd"
+        //sh"pwd"
+        sh"docker-compoes up"
     }
     stage('替换项目并运行'){ 
-        sh"rm -rf /home/Project/*"
-        sh"cp -r /var/lib/jenkins/workspace/Django_Yolo/* /home/Project"
-        sh"docker-compose -f /home/Project/docker-compose.yml up"
+       // sh"rm -rf /home/Project/*"
+       // sh"cp -r /var/lib/jenkins/workspace/Django_Yolo/* /home/Project"
+       // sh"docker-compose -f /home/Project/docker-compose.yml up"
     }
     echo '构建完成'
 }
