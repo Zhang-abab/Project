@@ -11,9 +11,9 @@ node{
         sh"pwd"
     }
     stage('替换项目并运行'){ 
-        sh"rm -rf ./*"
+        sh"rm -rf /home/Project/*"
         sh"cp /var/lib/jenkins/workspace/Django_Yolo/* ./"
-        sh"docker-compose up"
+        sh"docker-compose -f /home/Project/docker-compose.yml up"
     }
     echo '构建完成'
 }
