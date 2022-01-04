@@ -8,6 +8,7 @@ node{
     stage('替换项目并运行'){ 
        sh"rm -rf /home/Project/*"
        sh"cp -r /var/lib/jenkins/workspace/Django_Yolo/* /home/Project"
+       sh"chmod u+x /home/Project/run.sh"
        sh"/home/Project/run.sh"
     }
     echo '构建完成'
