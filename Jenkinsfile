@@ -10,12 +10,12 @@ node{
         //sh"cd /home/Project"
         //sh"docker-compose stop"
         //sh"pwd"
-        sh"docker-compoes up"
+        //sh"docker-compoes up"
     }
     stage('替换项目并运行'){ 
-       // sh"rm -rf /home/Project/*"
-       // sh"cp -r /var/lib/jenkins/workspace/Django_Yolo/* /home/Project"
-       // sh"docker-compose -f /home/Project/docker-compose.yml up"
+       sh"sudo rm -rf /home/Project/*"
+       sh"sudo cp -r /var/lib/jenkins/workspace/Django_Yolo/* /home/Project"
+       sh"docker-compose -f /home/Project/docker-compose.yml up"
     }
     echo '构建完成'
 }
