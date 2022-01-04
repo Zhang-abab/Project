@@ -1,2 +1,2 @@
 echo "Hello"
-docker-compoes up 
+docker-compose up 
