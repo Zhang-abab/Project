@@ -5,4 +5,7 @@ django-bootstrap4==21.1
 PyMySQL==1.0.2
 soupsieve==2.3.1
 sqlparse==0.4.2
-#psycopg2>=2.8
+django-heroku
+sqlparse
+gunicorn
+psycopg2
